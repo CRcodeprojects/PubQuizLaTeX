@@ -1,0 +1,87 @@
+\documentclass[host,printbonus]{pubQuiz} % Removing host option produces normal answer sheet
+
+\usepackage[margin=0.5in]{geometry}
+
+\title{\LaTeX \, Trivia}
+\author{The \,\LaTeX\, Pub}
+\date{\today}
+
+\begin{document}
+	\begin{PubRules}
+		\item Maximum team size: 6 people. 
+		\item You are not allowed to use your phones, laptops, or anything else 
+			that can look up answers.
+		\item Each question will be read only twice.
+	\end{PubRules}
+	
+	\PubRound{First Round}[25]
+		\begin{PubCategory}{Category 1}[I can write details such as who reads these questions here.]
+			\PubQ[I can write all my questions and answers here][Answer]
+			\PubQ[They will appear in the script, but not in the answer sheet][Answer]
+			\PubQ[The script is produced by giving the \texttt{host} option to the class][Answer]
+			\PubQ[I can use horizontal lists in questions using \texttt{enumerate*} 
+				\begin{enumerate*} 
+					\item option 1, 
+					\item option 2 
+				\end{enumerate*}][Answer]
+			\PubQ[If I don't want answers in the script, give the \texttt{noanswers} option to the class][Answer]
+		\end{PubCategory}
+		
+		\begin{PubCategory}{Category 2}[I can write host instructions for any category]
+			\PubShortQ[If my questions and answers are short, I can use \texttt{PubShortQ}.][Answer]
+			\PubQ[I can mix-and-match \texttt{PubQ} and \texttt{PubShortQ}, but it may look weird.][Answer]
+			\PubQ[Writing answers to the questions is optional]
+			\PubQ[Writing questions is also optional. If a question is not written, the line will say 
+				``No question given'']
+			\PubQ
+		\end{PubCategory}
+		
+		\begin{PubCategory}{Category 3}
+			\PubQs{5}
+		\end{PubCategory}
+		
+		\begin{PubCategory}*{BONUS}[I can add instructions to my bonus categories or games]
+			\PubQ[Questions for bonus categories or games can be included in the script by starring the 
+				\texttt{PubCategory}. No lines will be printed for answers. ]
+			\PubQ*[Use the command \texttt{PubQ*}, if no answer line will be given on the Answer Sheet]
+			\PubQ*[If you use \texttt{PubQ}, the answer line will be appear]
+		\end{PubCategory}
+		
+		\begin{PubCategory}{Category 4}
+			\PubQ[The point total in the score box is an optional parameter to \texttt{PubRound}]
+			\PubQs{4}
+		\end{PubCategory}
+		
+		\begin{PubCategory}{Category 5}
+			\PubQs{5}
+		\end{PubCategory}
+	
+	
+	\PubRound{Second Round}
+		\begin{PubCategoryColumns}{Category 6}{3}
+			\PubQ[Columns in the answer sheet can be created with the \texttt{PubCategoryColumns} 
+				environment]
+			\PubQs{14}
+		\end{PubCategoryColumns}
+		
+		\begin{PubCategoryColumns}{Category 7}{2}
+			\PubQ[You determine the number of columns]
+			\PubQs{9}
+		\end{PubCategoryColumns}
+		
+		\begin{PubCategory}*{Beer Game Time}[Here are some game instructions]
+		\end{PubCategory}
+		
+		\begin{PubCategoryColumns}{Category 8}{5}
+			\PubQs{25}
+		\end{PubCategoryColumns}
+		
+		\begin{PubCategory}{Category 8}
+			\begin{PubSubcategory}{Subcategory A}
+				\PubQs{5}
+			\end{PubSubcategory}
+			\begin{PubSubcategory}{Subcategory B}
+				\PubQs{5}
+			\end{PubSubcategory}
+		\end{PubCategory}
+\end{document}

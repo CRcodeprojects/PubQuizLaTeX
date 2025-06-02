@@ -1,0 +1,18 @@
+\documentclass[landscape, nohost]{pubQuiz} % Removing host option produces normal answer sheet
+
+
+\title{Picture Page}
+\author{The \,\LaTeX\, Pub}
+\date{\today}
+
+\begin{document}
+	\PubRound{Picture Page}
+		\foreach \j in {1,...,4}{
+			\begin{PubCategoryPictures}{Pictures \j}{\j}
+				\foreach \i in {1,...,\j}{
+					\PubQPicture{frog.jpg}[frog] 
+				}
+			\end{PubCategoryPictures}
+		}
+			
+\end{document}

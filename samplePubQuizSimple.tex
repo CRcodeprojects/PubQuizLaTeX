@@ -1,0 +1,25 @@
+\documentclass[nohost]{pubQuiz} % Removing host option produces normal answer sheet
+
+\usepackage[margin=0.5in]{geometry}
+
+\title{\LaTeX \, Trivia}
+\author{The \,\LaTeX\, Pub}
+\date{\today}
+
+\begin{document}
+	\PubRound{First Round}[25]
+		\PubCategorySimple{Category 1}[5]
+		\PubCategorySimple{Category 2}[5]
+		\PubCategorySimple{Category 3}[5]
+		\PubCategorySimple*{BONUS 1}
+		\PubCategorySimple{Category 4}[5]
+		\PubCategorySimple{Category 5}[5]
+		
+	\PubRound{Second Round}
+		\PubCategorySimple{Category 6}[5]
+		\PubCategoryColumnsSimple{Category 7}{2}[10]
+		\PubCategoryColumnsSimple{Category 8}{3}[15]
+		\PubCategorySimple*{BONUS 2}
+		\PubCategoryColumnsSimple{Category 9}{4}[20]
+		\PubCategoryColumnsSimple{Category 10}{5}[25]
+\end{document}
