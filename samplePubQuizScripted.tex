@@ -13,9 +13,13 @@
 			that can look up answers.
 		\item Each question will be read only twice.
 	\end{PubRules}
+	\begin{PubInstructions}
+		\item We hand out a puzzle at the end of round 1
+		\item There is a 30 minute break between rounds
+	\end{PubInstructions}
 	
 	\PubRound{First Round}[25]
-		\begin{PubCategory}{Category 1}[I can write details such as who reads these questions here.]
+		\begin{PubCategory}{Category 1}<Host reading>[I can write instructions or details about this category here.]
 			\PubQ[I can write all my questions and answers here][Answer]
 			\PubQ[They will appear in the script, but not in the answer sheet][Answer]
 			\PubQ[The script is produced by giving the \texttt{host} option to the class][Answer]
@@ -27,9 +31,10 @@
 			\PubQ[If I don't want answers in the script, give the \texttt{noanswers} option to the class][Answer]
 		\end{PubCategory}
 		
-		\begin{PubCategory}{Category 2}[I can write host instructions for any category]
-			\PubShortQ[If my questions and answers are short, I can use \texttt{PubShortQ}.][Answer]
-			\PubQ[I can mix-and-match \texttt{PubQ} and \texttt{PubShortQ}, but it may look weird.][Answer]
+		\begin{PubCategory}{Category Name}<Reading>[instructions for the category]
+			\PubQ[If my questions and answers are short, I can add a dot between question and answer.].[Answer]
+			\PubQ[I can mix-and-match the answer style, but it may look weird.][Answer]
+			\PubQ[I can mix-and-match the answer style, but it may look weird.].[Answer]
 			\PubQ[Writing answers to the questions is optional]
 			\PubQ[Writing questions is also optional. If a question is not written, the line will say 
 				``No question given'']
@@ -43,8 +48,6 @@
 		\begin{PubCategory}*{BONUS}[I can add instructions to my bonus categories or games]
 			\PubQ[Questions for bonus categories or games can be included in the script by starring the 
 				\texttt{PubCategory}. No lines will be printed for answers. ]
-			\PubQ*[Use the command \texttt{PubQ*}, if no answer line will be given on the Answer Sheet]
-			\PubQ*[If you use \texttt{PubQ}, the answer line will be appear]
 		\end{PubCategory}
 		
 		\begin{PubCategory}{Category 4}
@@ -55,26 +58,27 @@
 		\begin{PubCategory}{Category 5}
 			\PubQs{5}
 		\end{PubCategory}
-	
-	
+		
+	\begin{PubInstructions}
+		\item Quizzard published a new paper today, on the science of Pub Quizzes. To celebrate, everyone gets a free beer.
+	\end{PubInstructions}
 	\PubRound{Second Round}
-		\begin{PubCategoryColumns}{Category 6}{3}
-			\PubQ[Columns in the answer sheet can be created with the \texttt{PubCategoryColumns} 
+		\begin{PubCategory}|3|{Category 6}
+			\PubQ[Columns in the answer sheet can be created 
 				environment]
 			\PubQs{14}
-		\end{PubCategoryColumns}
-		
-		\begin{PubCategoryColumns}{Category 7}{2}
-			\PubQ[You determine the number of columns]
-			\PubQs{9}
-		\end{PubCategoryColumns}
-		
-		\begin{PubCategory}*{Beer Game Time}[Here are some game instructions]
 		\end{PubCategory}
 		
-		\begin{PubCategoryColumns}{Category 8}{5}
+		\begin{PubCategory}|2|{Category 7}
+			\PubQ[You determine the number of columns]
+			\PubQs{9}
+		\end{PubCategory}
+
+		\PubCat*{Beer Game Time}[Here are some game instructions]
+		
+		\begin{PubCategory}|5|{Category 8}
 			\PubQs{25}
-		\end{PubCategoryColumns}
+		\end{PubCategory}
 		
 		\begin{PubCategory}{Category 8}
 			\begin{PubSubcategory}{Subcategory A}
