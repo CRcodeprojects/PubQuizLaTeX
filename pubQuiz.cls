@@ -37,6 +37,8 @@
 		\setlist{itemsep=0.5ex}
 	\RequirePackage{tikz}
 	\RequirePackage{multicol}
+		\newif\ifPubColumns
+			\PubColumnsfalse
 		\setlength{\multicolsep}{0pt plus 3pt minus 3pt}
 		\setlength{\columnsep}{5pt}
 % Scorebox
@@ -49,8 +51,8 @@
 	\newlength{\Pixhelp}
 	\newlength{\Pixwidth}
 	\newlength{\Pixheight}
-	\setlength{\Pixheight}{0.12\textheight}
-	\setlength{\Pixwidth}{0.18\textwidth}
+	\setlength{\Pixheight}{65bp}
+	\setlength{\Pixwidth}{115bp}
 
 \makeatletter
 	
@@ -164,9 +166,9 @@
 		}{
 			\IfBooleanTF{#1}
 				{\ifPubHost \PubCategoryPrint{#6} \fi}
-				{	\IfNoValueF{#2}{\ifPubHost \else \begin{multicols}{#2} \fi}	
+				{	\IfNoValueF{#2}{\ifPubHost \else \begin{multicols}{#2} \PubColumnstrue \fi}	
 						\PubCategoryPrint{#6}	
-					\IfNoValueF{#2}{\ifPubHost \else \end{multicols} \fi}
+					\IfNoValueF{#2}{\ifPubHost \else \end{multicols} \PubColumnsfalse \fi}
 				}\par
 		}
 		
@@ -223,10 +225,11 @@
 		% #1: Picture file
 		% #2: (Optional) Answer
 			\item \ifPubHost #2 
-			\else  %
-				\centering
-				\includegraphics[keepaspectratio=true,width=\Pixwidth,height=\Pixheight,valign=t]{#1} \\[7mm]
-				\hrulefill \\
+			\else  \hfill%
+				\includegraphics[keepaspectratio=true,width=\Pixwidth,height=\Pixheight,valign=t]{#1} \hspace*{\fill} 
+				
+				\vspace{6mm}
+				\hrulefill \par
 			\fi 
 		}
 \makeatother
